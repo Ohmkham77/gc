@@ -39,6 +39,7 @@ body {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  transition: all .2s ease-in-out;
 }
 
 .navbar.active{
@@ -66,10 +67,6 @@ body {
   position: relative;
 }
 
-.link.al::after{
-  display: none;
-}
-
 .link::after{
   content: '';
   width: 100%;
@@ -80,6 +77,20 @@ body {
   left: 0;
   transform: scaleX(0);
   transition: transform .4s ease-out;
+}
+
+.link.al::after{
+  content: '';
+  width: 100%;
+  position: absolute;
+  padding: 5px 15px;
+  height: 18px;
+  transform: scale(1);
+  background-color: rgb(255, 128, 0);
+  bottom: -0.5px;
+  left: -15px;
+  z-index: -1;
+  border-radius: 20px;
 }
 
 .link:hover:after{
@@ -96,7 +107,7 @@ body {
 }
 
 .link .al{
-  color: rgb(255, 128, 0);
+  color: white;
 }
 
 .navbar.active .link-list a{
@@ -142,7 +153,7 @@ body {
   padding: 0 0px;
   font-size: 1.1em;
   font-weight: lighter;
-  color: black;
+  color: rgb(233, 234, 227, 1);
   border-radius: 24px;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
@@ -153,6 +164,7 @@ body {
 
 .navbar.active .input-search{
   border-color: rgb(233, 234, 227, 1);
+  color: rgb(0, 0, 0);
 }
 
 .navbar.active .input-search:hover{
@@ -167,6 +179,7 @@ body {
   cursor: text;
   background-color: rgb(233, 234, 227, 1);
   opacity: 1;
+  color: rgb(0, 0, 0);
 }
 
 .navbar.active .input-search:hover:focus{
@@ -317,6 +330,7 @@ body {
 
   .input-search{
     border-color: rgb(233, 234, 227, 1);
+    color: rgb(0, 0, 0);
   }
 
   .input-search + .search::after{
@@ -408,24 +422,26 @@ main {
   margin-bottom: 20px;
 }
 
-input.sn {
+.hc1 input.sn {
   width: 200px;
   padding: 10px 20px;
-  border-radius: 20px;
+  border-radius: 25px;
   border: none;
   background-color: rgb(255, 128, 0);
+  color: rgb(233, 234, 227, 1);
   font-weight: 600;
   font-size: 18px;
   letter-spacing: 2px;
-  color: rgb(233, 234, 227, 1);
   font-family: "Rajdhani", sans-serif;
   cursor: pointer;
   margin-bottom: 20px;
   transition: all 0.4s ease-out;
 }
 
-input.sn:hover {
-  background-color: rgb(0, 0, 0);
+.hc1 input.sn:hover {
+  background-color: rgb(233, 234, 227, 1);
+  color: rgb(255, 128, 0);
+  border: 1px solid rgb(255, 128, 0);
 }
 
 @media (max-width: 760px) {
@@ -433,3 +449,99 @@ input.sn:hover {
     margin-top: 110px;
   }
 }
+
+
+.hc2{
+  width: 100%;
+  height: auto;
+  padding-top: 30px;
+  background-color: white;
+}
+
+.hc2 .sg-pd-list{
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 30px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  overflow: hidden;
+  justify-content: space-around;
+}
+
+.hc2 .list-con{
+  flex-basis: 32%;
+  min-width: 200px;
+  overflow: hidden;
+  background-color: rgb(255, 128, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.hc2 .text-con{
+  height: fit-content;
+  padding: 15px 0;
+}
+
+.hc2 .ht{
+  color: rgb(255, 255, 255);
+  font-size: calc(70% + 1vmax);
+}
+
+.hc2 .img-con{
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  position: relative;
+}
+
+.hc2 img{
+  width: 120%;
+}
+
+.hc2 .sn-con{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hc2 .sn{
+  padding: 5px 15px;
+  border: 1px solid rgb(255, 128, 0);
+  border-radius: 10px;
+  background-color: rgb(233, 234, 227, 1);
+  color: rgb(255, 128, 0);
+  font-size: 1.8vmax;
+  cursor: pointer;
+  transition: all .2s ease-out;
+}
+
+.hc2 .sn:hover{
+  background-color: rgb(255, 128, 0);
+  color: rgb(233, 234, 227, 1);
+}
+
+
+@media (max-width: 458px){
+
+  .hc2 .list-con{
+    min-width: 260px;
+  }
+
+}
+
+
+
